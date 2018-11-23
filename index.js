@@ -7,7 +7,7 @@ var express = require('express')
 ;
 
 var app = express()
-	, port = parseInt(process.env.PORT || '8080')
+	, port = parseInt(process.env.PORT || '8888')
 	, server = http.createServer(app)
 ;
 
