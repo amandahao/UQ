@@ -11,7 +11,7 @@
         <br>
         <input id="resolution" type="text" placeholder="Write the resolution">
         <br>
-        <select id="select-side">
+        <select id="select-side" onchange="coordinate()">
           <option value="Select">Side?
           <option value="aff">Aff
           <option value="neg">Neg
@@ -35,7 +35,6 @@
 
     function coordinate() {
 
-      //var sector = document.querySelector('.select > span').className;
       var side = document.getElementById("select-side").value;
 
       console.log(side);
