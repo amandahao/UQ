@@ -21,14 +21,19 @@ app.get('/', (req, res, next) => {
 	res.sendFile(filePath);
 });
 
-app.get('/case', (req, res, next) => {
-	console.log('home')
+app.get('/case.html', (req, res, next) => {
+	console.log('case')
 	var filePath = path.join(__dirname, './case.html')
 	res.sendFile(filePath);
 });
 
-app.get('/navbar.css', (req, res, next) => {
-	var filePath = path.join(__dirname, './navbar.css')
+app.get('/main.css', (req, res, next) => {
+	var filePath = path.join(__dirname, './main.css')
+	res.sendFile(filePath);
+})
+
+app.get('/case.css', (req, res, next) => {
+	var filePath = path.join(__dirname, './case.css')
 	res.sendFile(filePath);
 })
 
