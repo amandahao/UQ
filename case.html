@@ -13,20 +13,49 @@
         <br>
         <select id="select-side">
           <option value="Select">Side?
-          <option value="Aff">Aff
-          <option value="Neg">Neg
-          <option value="Neg">Both sides
+          <option value="aff">Aff
+          <option value="neg">Neg
         </select>
         <br>
         <select id="select-case">
-          <option value="Select">Case type?
-          <option value="Aff">Aff
-          <option value="Neg">Neg
-          <option value="Neg">Both sides
+          <option value="Select">Argument type
+          <option dataId ="aff" value="top of case">Top of case + plan
+          <option dataId ="aff" value="Policy advantage">Policy advantage
+          <option dataId ="aff" value="Critical advantage">Critical advantage
+          <option dataId ="neg" value="Counterplan">Counterplan
+          <option dataId ="neg" value="Disadvantage">Disadvantage
+          <option dataId ="neg" value="Kritik">Kritik
+          <option value="full">Full case
         </select>
         <br>
         <br>
         <a href = "/">Go back home</a>
     </div>
+    <script>
+
+    function coordinate() {
+
+      //var sector = document.querySelector('.select > span').className;
+      var side = document.getElementById("select-side").value;
+
+      console.log(side);
+      var sideName = document.getElementById(`.${side}`);
+
+
+      var $options = document.querySelectorAll('#select-case > option');
+      for(i=0; i< $options.length; i++){
+        var $option = $options[i];
+        var dataId = $option.getAttribute("dataid");
+        if( dataId != side){
+          console.log('works');
+          $option.setAttribute('disabled', true);
+        }
+        else {
+          $option.removeAttribute('disabled');
+        }
+      }
+    }
+
+    </script>
   </body>
 </html>
